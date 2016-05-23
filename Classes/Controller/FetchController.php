@@ -1,6 +1,7 @@
 <?php
 namespace In2code\Fetchurl\Controller;
 
+use In2code\Fetchurl\Domain\Service\FetchService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /***************************************************************
@@ -39,6 +40,7 @@ class FetchController extends ActionController
      */
     public function indexAction()
     {
-        
+        $fetchService = $this->objectManager->get(FetchService::class);
+        $this->view->assign('html', $fetchService->fetchUrl($this->settings['main']['url']));
     }
 }

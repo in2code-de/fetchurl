@@ -10,6 +10,6 @@ if (!defined('TYPO3_MODE')) {
         'Fetch' => 'index'
     ],
     [
-        'Fetch' => 'index'
+        'Fetch' => ''
     ]
 );
