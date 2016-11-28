@@ -1,7 +1,7 @@
 {
   "name": "in2code/fetchurl",
   "description": "Fetch an url and show the content in a TYPO3 Frontend.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "keywords": ["typo3", "fetch", "iframe"],
   "homepage": "https://github.com/einpraegsam/fetchurl",
   "authors": [
