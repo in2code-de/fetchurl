@@ -7,6 +7,18 @@
 				<source>Main settings</source>
 				<target state="translated">Einstellungen</target>
 			</trans-unit>
+			<trans-unit id="flexform.main.view">
+				<source>Choose a fetch method</source>
+				<target state="translated">Bitte Transfermethode wählen</target>
+			</trans-unit>
+			<trans-unit id="flexform.main.view.0">
+				<source>Static</source>
+				<target state="translated">Statisch</target>
+			</trans-unit>
+			<trans-unit id="flexform.main.view.1">
+				<source>IFrame</source>
+				<target state="translated">IFrame</target>
+			</trans-unit>
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
 				<target state="translated">Website URL</target>

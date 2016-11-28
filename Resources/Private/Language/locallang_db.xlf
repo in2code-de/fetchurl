@@ -6,6 +6,15 @@
 			<trans-unit id="flexform.main">
 				<source>Main settings</source>
 			</trans-unit>
+			<trans-unit id="flexform.main.view">
+				<source>Choose a fetch method</source>
+			</trans-unit>
+			<trans-unit id="flexform.main.view.0">
+				<source>Static</source>
+			</trans-unit>
+			<trans-unit id="flexform.main.view.1">
+				<source>IFrame</source>
+			</trans-unit>
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
 			</trans-unit>

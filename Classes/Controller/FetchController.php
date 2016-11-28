@@ -3,6 +3,7 @@ namespace In2code\Fetchurl\Controller;
 
 use In2code\Fetchurl\Domain\Service\FetchService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
 /***************************************************************
  *  Copyright notice
@@ -30,17 +31,40 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Class FetchController
- * @package In2code\Fetchurl\Controller
  */
 class FetchController extends ActionController
 {
 
     /**
+     * @var ContentObjectRenderer
+     */
+    protected $contentObject;
+
+    /**
      * @return void
      */
-    public function indexAction()
+    public function fetchAction()
     {
         $fetchService = $this->objectManager->get(FetchService::class);
         $this->view->assign('html', $fetchService->fetchUrl($this->settings['main']['url']));
+        $this->assignForAllActions();
+    }
+
+    /**
+     * @return void
+     */
+    public function iframeAction()
+    {
+        $this->assignForAllActions();
+    }
+    
+    protected function assignForAllActions()
+    {
+        $this->view->assign('data', $this->contentObject->data);
+    }
+
+    protected function initializeAction()
+    {
+        $this->contentObject = $this->configurationManager->getContentObject();
     }
 }

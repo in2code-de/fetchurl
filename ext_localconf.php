@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
     'In2code.fetchurl',
     'Pi1',
     [
-        'Fetch' => 'index'
+        'Fetch' => 'fetch,iframe'
     ],
     [
         'Fetch' => ''
