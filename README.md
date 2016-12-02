@@ -29,6 +29,7 @@ Plugin for editors in backend:
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 3.0.2      | 2016-12-02 | Bugfix     | Remove version from composer.json                                            |
 | 3.0.1      | 2016-12-02 | Bugfix     | Hide not needed tt_content fields                                            |
 | 3.0.0      | 2016-11-28 | Task       | Add iframe feature                                                           |
 | 2.0.0      | 2016-05-23 | Initial    | Initial release of the fork of typo3-ter/fetch-url                           |
