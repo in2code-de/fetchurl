@@ -18,6 +18,9 @@
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
 			</trans-unit>
+			<trans-unit id="flexform.main.height">
+				<source>iFrame height</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

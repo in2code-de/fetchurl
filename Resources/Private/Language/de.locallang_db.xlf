@@ -23,6 +23,10 @@
 				<source>Url to fetch</source>
 				<target state="translated">Website URL</target>
 			</trans-unit>
+			<trans-unit id="flexform.main.height">
+				<source>iFrame height</source>
+				<target state="translated">iFrame-Höhe</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
