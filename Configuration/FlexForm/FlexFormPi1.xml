@@ -13,6 +13,7 @@
 					<switchableControllerActions>
 						<TCEforms>
 							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.view</label>
+							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -43,6 +44,7 @@
 					</settings.main.url>
 					<settings.main.height>
 						<TCEforms>
+							<displayCond><![CDATA[FIELD:main.switchableControllerActions:=:Fetch->iframe;]]></displayCond>
 							<exclude>1</exclude>
 							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.height</label>
 							<config>
