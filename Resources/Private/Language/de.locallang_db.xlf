@@ -23,9 +23,17 @@
 				<source>Url to fetch</source>
 				<target state="translated">Website URL</target>
 			</trans-unit>
+			<trans-unit id="flexform.main.width">
+				<source>iFrame width</source>
+				<target state="translated">iframe width</target>
+			</trans-unit>
 			<trans-unit id="flexform.main.height">
 				<source>iFrame height</source>
 				<target state="translated">iFrame-Höhe</target>
+			</trans-unit>
+			<trans-unit id="flexform.main.scrolling">
+				<source>Display scrollbars ?</source>
+				<target state="translated">Display scrollbars ?</target>
 			</trans-unit>
 		</body>
 	</file>
