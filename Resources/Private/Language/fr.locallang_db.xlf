@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-02T12:00:00Z" product-name="powermail">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2014-05-02T12:00:00Z" product-name="fetchurl">
 		<header/>
 		<body>
 			<trans-unit id="flexform.main">
 				<source>Main settings</source>
+				<target state="translated">Paramètres principaux</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.view">
 				<source>Choose a fetch method</source>
+				<target state="translated">Choisir une méthode</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.view.0">
 				<source>Static</source>
+				<target state="translated">Statique</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.view.1">
 				<source>IFrame</source>
+				<target state="translated">IFrame</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
+				<target state="translated">URL à récupérer</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.width">
-				<source>iFrame width</source>
+				<source>iframe width</source>
+				<target state="translated">Largeur de l'iFrame</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.height">
 				<source>iFrame height</source>
+				<target state="translated">Hauteur de l'iFrame</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.scrolling">
 				<source>Display scrollbars ?</source>
+				<target state="translated">Montrer les barres de défilement ?</target>
 			</trans-unit>
 		</body>
 	</file>
