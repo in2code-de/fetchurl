@@ -72,6 +72,15 @@ class FetchService
         if (preg_match('/<body .*?>(.*)<\/body/si', $html, $matches)) {
             $html = $matches[1];
         }
+        
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fetchurl']['processContent']) && is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fetchurl']['processContent'])) {
+			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['fetchurl']['processContent'] as $_funcRef) {
+				if ($_funcRef) {
+					GeneralUtility::callUserFunction($_funcRef, $html, $this);
+				}
+			}
+		}
+        
         return $html;
     }
 
