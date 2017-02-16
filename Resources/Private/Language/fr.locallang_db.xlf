@@ -35,6 +35,14 @@
 				<source>Display scrollbars ?</source>
 				<target state="translated">Montrer les barres de défilement ?</target>
 			</trans-unit>
+			<trans-unit id="fetchurl_title">
+				<source>Fetch remote content</source>
+				<target state="translated">Récupérer du contenu à distance</target>
+			</trans-unit>
+			<trans-unit id="fetchurl_wizard_description">
+				<source>Fetch external content (videos, audio, or other contents), directly or using an iframe.</source>
+				<target state="translated">Récupérer du contenu externe (vidéos, audio, ou autres), directement ou via une iframe.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

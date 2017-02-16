@@ -6,7 +6,7 @@ if (!defined('TYPO3_MODE')) {
 /**
  * Include Plugins
  */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin('fetchurl', 'Pi1', 'Fetchurl');
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin('fetchurl', 'Pi1', 'LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title');
 
 /**
  * Include Flexform
