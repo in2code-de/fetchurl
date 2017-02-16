@@ -13,7 +13,7 @@
 				<source>Static</source>
 			</trans-unit>
 			<trans-unit id="flexform.main.view.1">
-				<source>IFrame</source>
+				<source>iFrame</source>
 			</trans-unit>
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
@@ -25,7 +25,7 @@
 				<source>iFrame height</source>
 			</trans-unit>
 			<trans-unit id="flexform.main.scrolling">
-				<source>Display scrollbars ?</source>
+				<source>Display scrollbars?</source>
 			</trans-unit>
 		</body>
 	</file>

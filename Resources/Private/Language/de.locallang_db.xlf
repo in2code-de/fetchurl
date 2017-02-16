@@ -16,8 +16,8 @@
 				<target state="translated">Statisch</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.view.1">
-				<source>IFrame</source>
-				<target state="translated">IFrame</target>
+				<source>iFrame</source>
+				<target state="translated">iFrame</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
@@ -25,15 +25,15 @@
 			</trans-unit>
 			<trans-unit id="flexform.main.width">
 				<source>iFrame width</source>
-				<target state="translated">iframe width</target>
+				<target state="translated">iFrame Breite</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.height">
 				<source>iFrame height</source>
-				<target state="translated">iFrame-Höhe</target>
+				<target state="translated">iFrame Höhe</target>
 			</trans-unit>
 			<trans-unit id="flexform.main.scrolling">
-				<source>Display scrollbars ?</source>
-				<target state="translated">Display scrollbars ?</target>
+				<source>Display scrollbars?</source>
+				<target state="translated">Scrollbars anzeigen?</target>
 			</trans-unit>
 		</body>
 	</file>

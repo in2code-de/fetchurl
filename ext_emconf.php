@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = [
         This is an alternative to a iframe solution. Contained image or link URIs are rewritten accordingly.',
     'category' => 'plugin',
     'shy' => 0,
-    'version' => '3.2.0',
+    'version' => '3.3.0',
     'dependencies' => 'cms,extbase,fluid',
     'conflicts' => '',
     'priority' => '',
