@@ -44,7 +44,7 @@
 					</settings.main.url>
 					<settings.main.width>
 						<TCEforms>
-							<displayCond><![CDATA[FIELD:main.switchableControllerActions:=:Fetch->iframe;]]></displayCond>
+							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>
 							<exclude>1</exclude>
 							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.width</label>
 							<config>
@@ -56,7 +56,7 @@
 					</settings.main.width>
 					<settings.main.height>
 						<TCEforms>
-							<displayCond><![CDATA[FIELD:main.switchableControllerActions:=:Fetch->iframe;]]></displayCond>
+							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>
 							<exclude>1</exclude>
 							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.height</label>
 							<config>
@@ -68,7 +68,7 @@
 					</settings.main.height>
 					<settings.main.scrolling>
 						<TCEforms>
-							<displayCond><![CDATA[FIELD:main.switchableControllerActions:=:Fetch->iframe;]]></displayCond>
+							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>
 							<exclude>1</exclude>
 							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.scrolling</label>
 							<config>
