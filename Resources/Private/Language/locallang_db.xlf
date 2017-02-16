@@ -27,6 +27,12 @@
 			<trans-unit id="flexform.main.scrolling">
 				<source>Display scrollbars?</source>
 			</trans-unit>
+			<trans-unit id="fetchurl_title">
+				<source>Fetch remote content</source>
+			</trans-unit>
+			<trans-unit id="fetchurl_wizard_description">
+				<source>Fetch external content (videos, audio, or other contents), directly or using an iframe.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

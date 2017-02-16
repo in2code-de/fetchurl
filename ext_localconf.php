@@ -13,3 +13,15 @@ if (!defined('TYPO3_MODE')) {
         'Fetch' => ''
     ]
 );
+
+/**
+ * Register the extension icon
+ * @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry
+ */
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry->registerIcon('extensions-fetchurl-wizard',
+	'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
+	[
+		'source' => 'EXT:fetchurl/ext_icon.gif',
+	]
+);

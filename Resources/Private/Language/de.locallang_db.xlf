@@ -35,6 +35,14 @@
 				<source>Display scrollbars?</source>
 				<target state="translated">Scrollbars anzeigen?</target>
 			</trans-unit>
+			<trans-unit id="fetchurl_title">
+				<source>Fetch remote content</source>
+				<target state="translated">Fetch remote content</target>
+			</trans-unit>
+			<trans-unit id="fetchurl_wizard_description">
+				<source>Fetch external content (videos, audio, or other contents), directly or using an iframe.</source>
+				<target state="translated">Fetch external content (videos, audio, or other contents), directly or using an iframe.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
