@@ -29,6 +29,7 @@ Plugin for editors in backend:
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 3.4.0      | 2017-02-18 | !!!Task    | Small refactoring, allow url without protocol                                |
 | 3.3.1      | 2017-02-16 | Bugfix     | Show additional fields if plugin mode == iframe                              |
 | 3.3.0      | 2017-02-01 | Feature    | Set iFrame width and scrollbars in FlexForm                                  |
 | 3.2.0      | 2017-02-01 | Feature    | Set iFrame height in FlexForm                                                |
