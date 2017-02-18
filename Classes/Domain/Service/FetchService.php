@@ -34,11 +34,9 @@ class FetchService
 {
 
     /**
-     * URL to parse
-     *
-     * @var string
+     * @var array
      */
-    protected $url = '';
+    protected $settings = [];
 
     /**
      * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher
@@ -47,11 +45,20 @@ class FetchService
     protected $signalSlotDispatcher;
 
     /**
+     * FetchService constructor.
+     *
+     * @param array $settings
+     */
+    public function __construct(array $settings)
+    {
+        $this->settings = $settings;
+    }
+
+    /**
      * @return string
      */
-    public function fetchUrl($url)
+    public function getfetchedUrl()
     {
-        $this->url = $url;
         $html = $this->getContentFromUrl();
         $html = $this->getBodyContent($html);
         $this->signalSlotDispatcher->dispatch(__CLASS__, __FUNCTION__, [&$html, $this]);
@@ -63,7 +70,7 @@ class FetchService
      */
     protected function getContentFromUrl()
     {
-        return GeneralUtility::getUrl($this->prependProtocol($this->url));
+        return GeneralUtility::getUrl($this->getUrl());
     }
 
     /**
@@ -92,5 +99,13 @@ class FetchService
             $html = $matches[1];
         }
         return $html;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->prependProtocol($this->settings['main']['url']);
     }
 }

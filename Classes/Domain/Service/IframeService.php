@@ -1,10 +1,5 @@
 <?php
-namespace In2code\Fetchurl\Controller;
-
-use In2code\Fetchurl\Domain\Service\FetchService;
-use In2code\Fetchurl\Domain\Service\IframeService;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
+namespace In2code\Fetchurl\Domain\Service;
 
 /***************************************************************
  *  Copyright notice
@@ -31,47 +26,45 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
  ***************************************************************/
 
 /**
- * Class FetchController
+ * Class IframeService
  */
-class FetchController extends ActionController
+class IframeService
 {
 
     /**
-     * @var ContentObjectRenderer
+     * @var array
      */
-    protected $contentObject;
+    protected $settings = [];
 
     /**
-     * @return void
+     * FetchService constructor.
+     *
+     * @param array $settings
      */
-    public function fetchAction()
+    public function __construct(array $settings)
     {
-        $this->view->assign('html', $this->objectManager->get(FetchService::class, $this->settings));
-        $this->assignForAllActions();
+        $this->settings = $settings;
     }
 
     /**
-     * @return void
+     * @return string
      */
-    public function iframeAction()
+    public function getUrl()
     {
-        $this->view->assign('iframe', $this->objectManager->get(IframeService::class, $this->settings));
-        $this->assignForAllActions();
+        return $this->prependShortProtocol($this->settings['main']['url']);
     }
 
     /**
-     * @return void
+     * Prepend https protocol if it's missing
+     *
+     * @param string $string
+     * @return string
      */
-    protected function assignForAllActions()
+    protected function prependShortProtocol($string)
     {
-        $this->view->assign('data', $this->contentObject->data);
-    }
-
-    /**
-     * @return void
-     */
-    protected function initializeAction()
-    {
-        $this->contentObject = $this->configurationManager->getContentObject();
+        if (preg_match('~^https?://~', $string) === 0) {
+            $string = '//' . $string;
+        }
+        return $string;
     }
 }
