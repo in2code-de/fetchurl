@@ -57,12 +57,18 @@ class FetchController extends ActionController
     {
         $this->assignForAllActions();
     }
-    
+
+    /**
+     * @return void
+     */
     protected function assignForAllActions()
     {
         $this->view->assign('data', $this->contentObject->data);
     }
 
+    /**
+     * @return void
+     */
     protected function initializeAction()
     {
         $this->contentObject = $this->configurationManager->getContentObject();

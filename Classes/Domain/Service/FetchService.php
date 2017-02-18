@@ -29,7 +29,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class FetchService
- * @package In2code\Fetchurl\Domain\Service
  */
 class FetchService
 {
@@ -40,12 +39,12 @@ class FetchService
      * @var string
      */
     protected $url = '';
-	
-	/**
-	 * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher
-	 * @inject
-	 */
-	protected $signalSlotDispatcher;  
+
+    /**
+     * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher
+     * @inject
+     */
+    protected $signalSlotDispatcher;
 
     /**
      * @return string
@@ -55,10 +54,7 @@ class FetchService
         $this->url = $url;
         $html = $this->getContentFromUrl();
         $html = $this->getBodyContent($html);
-		// Signal to modify the fetched $html content
-		$this->signalSlotDispatcher = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
-		$this->signalSlotDispatcher->dispatch(__CLASS__, __FUNCTION__ , [&$html, $this]);
-//        $html = $this->replaceDomain($html);
+        $this->signalSlotDispatcher->dispatch(__CLASS__, __FUNCTION__, [&$html, $this]);
         return $html;
     }
 
@@ -81,29 +77,6 @@ class FetchService
         if (preg_match('/<body .*?>(.*)<\/body/si', $html, $matches)) {
             $html = $matches[1];
         }
-        
-        return $html;
-    }
-
-    /**
-     * @param string $html
-     * @return string
-     */
-    protected function replaceDomain($html)
-    {
-        $patterns = [
-            '/src="(\w[^:]+?)"/i',
-            '/src="\/([^:]+?)"/i',
-            '/href="(\w[^:]+?)"/i',
-            '/href="\/([^:]+?)"/i'
-        ];
-        $replacements = [
-            'src="' . $this->getCurrentDomain() . '/$1"',
-            'src="' . $this->getParsingDomain() . '/$1"',
-            'href="' . $this->getCurrentDomain() . '/$1"',
-            'href="' . $this->getParsingDomain() . '/$1"'
-        ];
-        $html = preg_replace($patterns, $replacements, $html);
         return $html;
     }
 

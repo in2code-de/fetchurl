@@ -1,9 +1,6 @@
 <?php
 namespace In2code\Fetchurl\Controller;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
 /***************************************************************
  *  Copyright notice
  *
@@ -43,14 +40,16 @@ class FetchControllerWizard
     public function proc($wizardItems)
     {
         $wizardItem = [
-            'title' => $this->getLanguageService()->sL('LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title'),
-            'description' => $this->getLanguageService()->sL('LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_wizard_description'),
+            'title' => $this->getLanguageService()->sL(
+                'LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title'
+            ),
+            'description' => $this->getLanguageService()->sL(
+                'LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_wizard_description'
+            ),
             'params' => '&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=fetchurl_pi1',
-			'iconIdentifier' => 'extensions-fetchurl-wizard'
+            'iconIdentifier' => 'extensions-fetchurl-wizard'
         ];
-
         $wizardItems['plugins_tx_fetchurl'] = $wizardItem;
-
         return $wizardItems;
     }
 
