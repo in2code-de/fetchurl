@@ -63,7 +63,21 @@ class FetchService
      */
     protected function getContentFromUrl()
     {
-        return GeneralUtility::getUrl($this->url);
+        return GeneralUtility::getUrl($this->prependProtocol($this->url));
+    }
+
+    /**
+     * Prepend https protocol if it's missing
+     *
+     * @param string $string
+     * @return string
+     */
+    protected function prependProtocol($string)
+    {
+        if (preg_match('~^https?://~', $string) === 0) {
+            $string = 'https://' . $string;
+        }
+        return $string;
     }
 
     /**
@@ -78,22 +92,5 @@ class FetchService
             $html = $matches[1];
         }
         return $html;
-    }
-
-    /**
-     * @return string
-     */
-    protected function getParsingDomain()
-    {
-        $urlParts = parse_url($this->url);
-        return $urlParts['scheme'] . '://' . $urlParts['host'];
-    }
-
-    /**
-     * @return string
-     */
-    protected function getCurrentDomain()
-    {
-        return GeneralUtility::getIndpEnv('TYPO3_REQUEST_HOST');
     }
 }
