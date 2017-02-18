@@ -40,6 +40,12 @@ class FetchService
      * @var string
      */
     protected $url = '';
+	
+	/**
+	 * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher
+	 * @inject
+	 */
+	protected $signalSlotDispatcher;  
 
     /**
      * @return string
@@ -49,6 +55,9 @@ class FetchService
         $this->url = $url;
         $html = $this->getContentFromUrl();
         $html = $this->getBodyContent($html);
+		// Signal to modify the fetched $html content
+		$this->signalSlotDispatcher = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
+		$this->signalSlotDispatcher->dispatch(__CLASS__, __FUNCTION__ , [&$html, $this]);
 //        $html = $this->replaceDomain($html);
         return $html;
     }
@@ -72,6 +81,7 @@ class FetchService
         if (preg_match('/<body .*?>(.*)<\/body/si', $html, $matches)) {
             $html = $matches[1];
         }
+        
         return $html;
     }
 
