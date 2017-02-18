@@ -55,6 +55,12 @@ class FetchController extends ActionController
      */
     public function iframeAction()
     {
+		// Checking if the requested url starts with http:// or https://
+		$url = $this->settings['main']['url'];
+		if (!preg_match("@^https?://@", $url)) {
+			$this->settings['main']['url']= "//" . $url;
+			$this->view->assign('settings', $this->settings);
+		}
         $this->assignForAllActions();
     }
 
