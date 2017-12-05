@@ -15,6 +15,19 @@ static content (CURL) or via iFrame.
 ## Installation
 * Installation is very simple - just install the extension then you can use the plugin
 
+## How to overwrite HTML-Templates?
+
+Just copy the folder Fetch in EXT:fetchurl/Resources/Private/Templates/ to any location and set the new path via 
+TypoScript setup:
+
+```
+plugin.tx_fetchurl {
+	view {
+		templateRootPaths.1 = EXT:myextension/Resources/Private/Templates/Fetchurl/
+	}
+}
+```
+
 
 ## Screenshots
 
