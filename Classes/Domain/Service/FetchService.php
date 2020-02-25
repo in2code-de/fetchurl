@@ -70,6 +70,9 @@ class FetchService
      */
     protected function getContentFromUrl()
     {
+        if ($this->settings["main"]["forwardUrl"]) {
+            return GeneralUtility::getUrl($this->getUrl(), 0, ["Referer" => $this->settings["originalUrl"]]);
+        }
         return GeneralUtility::getUrl($this->getUrl());
     }
 

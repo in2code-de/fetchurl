@@ -46,6 +46,7 @@ class FetchController extends ActionController
      */
     public function fetchAction()
     {
+        $this->settings["originalUrl"] = $this->uriBuilder->getRequest()->getRequestUri();
         $this->view->assign('html', $this->objectManager->get(FetchService::class, $this->settings));
         $this->assignForAllActions();
     }
@@ -74,4 +75,5 @@ class FetchController extends ActionController
     {
         $this->contentObject = $this->configurationManager->getContentObject();
     }
+
 }

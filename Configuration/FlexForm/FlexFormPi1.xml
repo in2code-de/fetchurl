@@ -17,6 +17,7 @@
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
+								<default>Fetch->fetch;</default>
 								<items type="array">
 									<numIndex index="1" type="array">
 										<numIndex index="0">LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.view.0</numIndex>
@@ -42,6 +43,21 @@
 							</config>
 						</TCEforms>
 					</settings.main.url>
+					<settings.main.forwardUrl>
+						<TCEforms>
+							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->fetch;]]></displayCond>
+							<exclude>1</exclude>
+							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.forwardUrl</label>
+							<config>
+								<type>check</type>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.forwardUrl</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.main.forwardUrl>
 					<settings.main.width>
 						<TCEforms>
 							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>

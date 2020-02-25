@@ -18,6 +18,9 @@
 			<trans-unit id="flexform.main.url">
 				<source>Url to fetch</source>
 			</trans-unit>
+			<trans-unit id="flexform.main.forwardUrl">
+				<source>Forward URL</source>
+			</trans-unit>
 			<trans-unit id="flexform.main.width">
 				<source>iFrame width</source>
 			</trans-unit>
