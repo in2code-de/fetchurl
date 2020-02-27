@@ -26,4 +26,11 @@ call_user_func(function () {
             'source' => 'EXT:fetchurl/Resources/Public/Icons/Extension.svg',
         ]
     );
+
+    /**
+     * ContentElementWizard
+     */
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fetchurl/Configuration/TsConfig/Page/ContentElementWizard.typoscript">'
+    );
 });
