@@ -32,10 +32,10 @@ plugin.tx_fetchurl {
 ## Screenshots
 
 Frontend example:
-<img src="https://box.everhelper.me/attachment/664431/84725fb7-0b3e-4c40-b52e-29d7620777bb/262407-rgnnGxhRlVp0qMWs/screen.png" />
+![Frontend example](Documentation/Images/frontend.png)
 
 Plugin for editors in backend:
-<img src="https://box.everhelper.me/attachment/664437/84725fb7-0b3e-4c40-b52e-29d7620777bb/262407-WiixTExtfSW9RVtR/screen.png" />
+![Backend example](Documentation/Images/backend.png)
 
 
 ## Changelog
