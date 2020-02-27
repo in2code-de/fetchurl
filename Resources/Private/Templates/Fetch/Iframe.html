@@ -1,3 +1,38 @@
 <div class="iframe">
-	<iframe class="iframe__frame" src="{iframe.url}" allowfullscreen="" title="{data.header}" width="{f:if(condition: settings.main.width, then: settings.main.width, else: '100%')}" height="{f:if(condition: settings.main.height, then: settings.main.height, else: '500')}" scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}"></iframe>
+	<f:if condition="{settings.useIframeSwitch}">
+		<f:then>
+			<div class="iframeswitch-container iframe__frame"
+				data-iframeswitch-src="{iframe.url}"
+				data-iframeswitch-class="iframe__frame"
+				data-iframeswitch-allowfullscreen=""
+				data-iframeswitch-title="{data.header}"
+				data-iframeswitch-width="{f:if(condition: settings.main.width, then: settings.main.width, else: '100%')}"
+				data-iframeswitch-height="{f:if(condition: settings.main.height, then: settings.main.height, else: '500')}"
+				data-iframeswitch-scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}">
+
+				<f:variable name="domain" value="<span data-iframeswitch-uri='true'>domain.net</span>"/>
+				<f:variable name="privacyPage" value="<f:link.page pageUid=\"{settings.pidPrivacy}\">{f:translate(key:'iframeswitch.privacy.page')}</f:link.page>"/>
+
+				<f:format.raw>
+					<f:translate key="iframeswitch.privacy.text" arguments="{0:domain, 1:privacyPage}">
+						Um diesen Inhalt (Quelle: <span data-iframeswitch-uri="true">www.xyz.de</span>) anzuzeigen, klicken Sie bitte
+						auf Akzeptieren. Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte übermittelt oder
+						Cookies gespeichert werden könnten. Weitere Informationen finden Sie auf unserer <f:link.page pageUid="{settings.pidPrivacy}">Datenschutzerklärung</f:link.page>.
+					</f:translate>
+				</f:format.raw>
+
+				<button class="iframeswitch-submit" style="display: block; width: auto; margin-top: 20px;"><f:translate key="iframeswitch.privacy.accept">Accept</f:translate></button>
+			</div>
+		</f:then>
+		<f:else>
+			<iframe
+					class="iframe__frame"
+					src="{iframe.url}"
+					allowfullscreen=""
+					title="{data.header}"
+					width="{f:if(condition: settings.main.width, then: settings.main.width, else: '100%')}"
+					height="{f:if(condition: settings.main.height, then: settings.main.height, else: '500')}"
+					scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}"></iframe>
+		</f:else>
+	</f:if>
 </div>

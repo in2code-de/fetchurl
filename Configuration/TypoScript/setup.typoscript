@@ -1,0 +1,11 @@
+page.includeJSFooterlibs.iframeSwitch = EXT:fetchurl/Resources/Public/JavaScript/IframeSwitch.js
+
+plugin.tx_fetchurl_pi1 {
+    settings {
+        # Use a Two-Click-Solution before iframe is shown for security reasons
+        useIframeSwitch = 1
+
+        # If Two-Click-Solutions is activated, offer a link to privacy page
+        pidPrivacy = 8945
+    }
+}

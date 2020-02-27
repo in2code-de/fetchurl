@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-02T12:00:00Z" product-name="powermail">
+		<header/>
+		<body>
+			<trans-unit id="iframeswitch.privacy.text">
+				<source>To see this content (source: %s), you have to click accept. We would like to point out that by accepting this iframe data could be transmitted to third parties or cookies could be saved. For more information, see our %s.</source>
+			</trans-unit>
+			<trans-unit id="iframeswitch.privacy.page">
+				<source>privacy policy</source>
+			</trans-unit>
+			<trans-unit id="iframeswitch.privacy.accept">
+				<source>Accept</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

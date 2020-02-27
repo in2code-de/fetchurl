@@ -37,6 +37,9 @@ Frontend example:
 Plugin for editors in backend:
 ![Backend example](Documentation/Images/backend.png)
 
+Example for a privacy save 2-click-solution:
+![Backend example](Documentation/Images/iframeswitch.png)
+
 
 ## Changelog
 

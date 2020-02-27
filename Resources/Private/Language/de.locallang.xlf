@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-05-02T12:00:00Z" product-name="fetchurl">
+		<header/>
+		<body>
+			<trans-unit id="iframeswitch.privacy.text">
+				<source>To see this content (source: %s), you have to click accept. We would like to point out that by accepting this iframe data could be transmitted to third parties or cookies could be saved. For more information, see our %s.</source>
+				<target state="translated">Um diesen Inhalt (Quelle: %s) anzuzeigen, klicken Sie bitte auf Akzeptieren. Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte übermittelt oder Cookies gespeichert werden könnten. Weitere Informationen finden Sie auf unserer %s.</target>
+			</trans-unit>
+			<trans-unit id="iframeswitch.privacy.page">
+				<source>privacy policy</source>
+				<target state="translated">Datenschutzerklärung</target>
+			</trans-unit>
+			<trans-unit id="iframeswitch.privacy.accept">
+				<source>Accept</source>
+				<target state="translated">Akzeptieren</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

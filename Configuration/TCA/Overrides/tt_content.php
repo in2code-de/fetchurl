@@ -6,12 +6,15 @@ if (!defined('TYPO3_MODE')) {
 /**
  * Include Plugins
  */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin('fetchurl', 'Pi1', 'LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title');
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    'fetchurl',
+    'Pi1',
+    'LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title'
+);
 
 /**
  * Include Flexform
  */
-// Pi1
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['fetchurl_pi1'] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     'fetchurl_pi1',
