@@ -45,6 +45,7 @@ Example for a privacy save 2-click-solution:
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 4.0.0      | 2020-02-27 | Feature    | Add a 2-click solution for iframes                                           |
 | 3.5.0      | 2019-07-29 | Task       | Use subtree split in composer for TYPO3 core                                 |
 | 3.4.0      | 2017-02-18 | !!!Task    | Small refactoring, allow url without protocol                                |
 | 3.3.1      | 2017-02-16 | Bugfix     | Show additional fields if plugin mode == iframe                              |
