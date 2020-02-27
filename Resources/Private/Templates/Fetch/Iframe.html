@@ -8,7 +8,8 @@
 				data-iframeswitch-title="{data.header}"
 				data-iframeswitch-width="{f:if(condition: settings.main.width, then: settings.main.width, else: '100%')}"
 				data-iframeswitch-height="{f:if(condition: settings.main.height, then: settings.main.height, else: '500')}"
-				data-iframeswitch-scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}">
+				data-iframeswitch-scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}"
+				data-iframeswitch-sandox="">
 
 				<f:variable name="domain" value="<span data-iframeswitch-uri='true'>domain.net</span>"/>
 				<f:variable name="privacyPage" value="<f:link.page pageUid=\"{settings.pidPrivacy}\">{f:translate(key:'iframeswitch.privacy.page')}</f:link.page>"/>
@@ -32,7 +33,8 @@
 					title="{data.header}"
 					width="{f:if(condition: settings.main.width, then: settings.main.width, else: '100%')}"
 					height="{f:if(condition: settings.main.height, then: settings.main.height, else: '500')}"
-					scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}"></iframe>
+					scrolling="{f:if(condition: settings.main.scrolling, then: settings.main.scrolling)}"
+					sandbox=""></iframe>
 		</f:else>
 	</f:if>
 </div>
