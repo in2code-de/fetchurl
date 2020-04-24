@@ -12,11 +12,11 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'fetchurl',
-    'description' => 'Fetch an url and show the content in Frontend. 
+    'description' => 'Fetch an url and show the content in Frontend.
         This is an alternative to a iframe solution. Contained image or link URIs are rewritten accordingly.',
     'category' => 'plugin',
     'shy' => 0,
-    'version' => '4.0.2',
+    'version' => '4.1.0',
     'dependencies' => 'cms,extbase,fluid',
     'conflicts' => '',
     'priority' => '',
@@ -35,7 +35,7 @@ $EM_CONF[$_EXTKEY] = [
     'CGLcompliance_note' => '',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0-9.5.99',
+            'typo3' => '7.6.0-10.4.99',
             'php' => '5.5.0-0.0.0'
         ],
         'conflicts' => [],
