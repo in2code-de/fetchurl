@@ -17,7 +17,7 @@ static content (CURL) or via iFrame.
 
 ## How to overwrite HTML-Templates?
 
-Just copy the folder Fetch in EXT:fetchurl/Resources/Private/Templates/ to any location and set the new path via 
+Just copy the folder Fetch in EXT:fetchurl/Resources/Private/Templates/ to any location and set the new path via
 TypoScript setup:
 
 ```
@@ -45,6 +45,7 @@ Example for a privacy save 2-click-solution:
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 4.1.0      | 2020-04-24 | Feature    | Declare extension compatible with TYPO3 V10                                  |
 | 4.0.2      | 2020-03-10 | Bugfix     | Remove sandbox-attribute of the iframe                                       |
 | 4.0.1      | 2020-03-02 | Bugfix     | Fix small typo in template file                                              |
 | 4.0.0      | 2020-02-27 | Feature    | Add a 2-click solution for iframes                                           |
