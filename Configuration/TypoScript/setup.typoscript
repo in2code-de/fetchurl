@@ -7,5 +7,14 @@ plugin.tx_fetchurl_pi1 {
 
         # If Two-Click-Solutions is activated, offer a link to privacy page
         pidPrivacy = 8945
+
+        # Add additional parameter to the url
+        additionalParameter {
+            static {
+            }
+
+            iframe {
+            }
+        }
     }
 }
