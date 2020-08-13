@@ -27,7 +27,49 @@ plugin.tx_fetchurl {
 	}
 }
 ```
+## How to append additional parameter?
 
+It is possible to attach additional parameters to all fetchurl requests. 
+This is done with the TypoScript keys "**additionalParameter.static**" and "**additionalParameter.iframe**". 
+
+Existing parameters and the fragment are kept.
+
+**Note:**
+if a parameter is specified in the url and set in TypoScript, the value of the url is overwritten and the TypoScript value is used.
+
+See the example below:
+
+| flexform url                                      | final url                                                     |
+| ------------------------------------------------- | ------------------------------------------------------------- |
+| https://example.com/                              | https://example.com/?parameterName=parameterValue             |
+| https://example.com/#c123                         | https://example.com/?parameterName=parameterValue#c123        |
+| https://example.com/?id=12#c123                   | https://example.com/?id=12&parameterName=parameterValue#c123  |
+| https://example.com/?id=12&parameterName=abc#c123 | https://example.com/?id=12&parameterName=parameterValue#c123  | 
+
+```
+plugin.tx_fetchurl_pi1 {
+    settings {
+        additionalParameter {
+            static {
+                parameterName = parameterValue
+            }
+
+            iframe {
+                parameterName = parameterValue
+            }
+        }
+    }
+}
+
+```
+
+## Signals
+
+| Signal class name                              |  Signal name  | information                                             |
+| ---------------------------------------------- | ------------- | ------------------------------------------------------- |
+| \In2code\Fetchurl\Domain\Service\FetchService  | afterUrlBuild | after the protocol and additional parameter are added   |
+| \In2code\Fetchurl\Domain\Service\FetchService  | getfetchedUrl | after the content fetched                               |
+| \In2code\Fetchurl\Domain\Service\IframeService | afterUrlBuild | after the protocol and additional parameter are added   |
 
 ## Screenshots
 

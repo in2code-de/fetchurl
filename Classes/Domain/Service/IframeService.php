@@ -1,5 +1,9 @@
 <?php
+
 namespace In2code\Fetchurl\Domain\Service;
+
+use In2code\Fetchurl\Utility\UrlUtility;
+use TYPO3\CMS\Extbase\SignalSlot\Dispatcher;
 
 /***************************************************************
  *  Copyright notice
@@ -32,6 +36,11 @@ class IframeService
 {
 
     /**
+     * @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher
+     */
+    protected $signalSlotDispatcher;
+
+    /**
      * @var array
      */
     protected $settings = [];
@@ -48,10 +57,18 @@ class IframeService
 
     /**
      * @return string
+     * @throws \TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotException
+     * @throws \TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotReturnException
      */
     public function getUrl()
     {
-        return $this->prependShortProtocol($this->settings['main']['url']);
+        $url = UrlUtility::appendAdditionalParameter(
+            $this->prependShortProtocol($this->settings['main']['url']),
+            $this->settings['additionalParameter']['iframe']
+        );
+        $this->signalSlotDispatcher->dispatch(__CLASS__, 'afterUrlBuild', [&$url, $this]);
+
+        return $url;
     }
 
     /**
@@ -66,5 +83,13 @@ class IframeService
             $string = '//' . $string;
         }
         return $string;
+    }
+
+    /**
+     * @param Dispatcher $signalSlotDispatcher
+     */
+    public function injectSignalSlotDispatcher(Dispatcher $signalSlotDispatcher)
+    {
+        $this->signalSlotDispatcher = $signalSlotDispatcher;
     }
 }

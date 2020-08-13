@@ -2,6 +2,7 @@
 
 namespace In2code\Fetchurl\Domain\Service;
 
+use In2code\Fetchurl\Utility\UrlUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\SignalSlot\Dispatcher;
 
@@ -57,6 +58,8 @@ class FetchService
 
     /**
      * @return string
+     * @throws \TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotException
+     * @throws \TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotReturnException
      */
     public function getfetchedUrl()
     {
@@ -104,10 +107,18 @@ class FetchService
 
     /**
      * @return string
+     * @throws \TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotException
+     * @throws \TYPO3\CMS\Extbase\SignalSlot\Exception\InvalidSlotReturnException
      */
     public function getUrl()
     {
-        return $this->prependProtocol($this->settings['main']['url']);
+        $url = UrlUtility::appendAdditionalParameter(
+            $this->prependProtocol($this->settings['main']['url']),
+            $this->settings['additionalParameter']['static']
+        );
+        $this->signalSlotDispatcher->dispatch(__CLASS__, 'afterUrlBuild', [&$url, $this]);
+
+        return $url;
     }
 
     /**
