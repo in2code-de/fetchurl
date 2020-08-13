@@ -45,6 +45,7 @@ Example for a privacy save 2-click-solution:
 
 | Version    | Date       | State      | Description                                                                  |
 | ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| 4.1.1      | 2020-08-13 | Bugfix     | Replace signalSlogDispatcher phpDoc injection with method injection          |
 | 4.1.0      | 2020-04-24 | Feature    | Declare extension compatible with TYPO3 V10                                  |
 | 4.0.2      | 2020-03-10 | Bugfix     | Remove sandbox-attribute of the iframe                                       |
 | 4.0.1      | 2020-03-02 | Bugfix     | Fix small typo in template file                                              |
