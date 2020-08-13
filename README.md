@@ -85,20 +85,21 @@ Example for a privacy save 2-click-solution:
 
 ## Changelog
 
-| Version    | Date       | State      | Description                                                                  |
-| ---------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
-| 4.1.1      | 2020-08-13 | Bugfix     | Replace signalSlogDispatcher phpDoc injection with method injection          |
-| 4.1.0      | 2020-04-24 | Feature    | Declare extension compatible with TYPO3 V10                                  |
-| 4.0.2      | 2020-03-10 | Bugfix     | Remove sandbox-attribute of the iframe                                       |
-| 4.0.1      | 2020-03-02 | Bugfix     | Fix small typo in template file                                              |
-| 4.0.0      | 2020-02-27 | Feature    | Add a 2-click solution for iframes                                           |
-| 3.5.0      | 2019-07-29 | Task       | Use subtree split in composer for TYPO3 core                                 |
-| 3.4.0      | 2017-02-18 | !!!Task    | Small refactoring, allow url without protocol                                |
-| 3.3.1      | 2017-02-16 | Bugfix     | Show additional fields if plugin mode == iframe                              |
-| 3.3.0      | 2017-02-01 | Feature    | Set iFrame width and scrollbars in FlexForm                                  |
-| 3.2.0      | 2017-02-01 | Feature    | Set iFrame height in FlexForm                                                |
-| 3.1.0      | 2016-12-22 | Task       | Remove refactor ext_tables.php for T3 8.5 and newer                          |
-| 3.0.2      | 2016-12-02 | Bugfix     | Remove version from composer.json                                            |
-| 3.0.1      | 2016-12-02 | Bugfix     | Hide not needed tt_content fields                                            |
-| 3.0.0      | 2016-11-28 | Task       | Add iframe feature                                                           |
-| 2.0.0      | 2016-05-23 | Initial    | Initial release of the fork of typo3-ter/fetch-url                           |
+| Version    | Date       | State      | Description                                                                                        |
+| ---------- | ---------- | ---------- | -------------------------------------------------------------------------------------------------- |
+| 4.2.0      | 2020-08-13 | Feature    | Add typoscript option to add additional parameter to the flexform url, add "afterUrlBuild" signals |
+| 4.1.1      | 2020-08-13 | Bugfix     | Replace signalSlogDispatcher phpDoc injection with method injection                                |
+| 4.1.0      | 2020-04-24 | Feature    | Declare extension compatible with TYPO3 V10                                                        |
+| 4.0.2      | 2020-03-10 | Bugfix     | Remove sandbox-attribute of the iframe                                                             |
+| 4.0.1      | 2020-03-02 | Bugfix     | Fix small typo in template file                                                                    |
+| 4.0.0      | 2020-02-27 | Feature    | Add a 2-click solution for iframes                                                                 |
+| 3.5.0      | 2019-07-29 | Task       | Use subtree split in composer for TYPO3 core                                                       |
+| 3.4.0      | 2017-02-18 | !!!Task    | Small refactoring, allow url without protocol                                                      |
+| 3.3.1      | 2017-02-16 | Bugfix     | Show additional fields if plugin mode == iframe                                                    |
+| 3.3.0      | 2017-02-01 | Feature    | Set iFrame width and scrollbars in FlexForm                                                        |
+| 3.2.0      | 2017-02-01 | Feature    | Set iFrame height in FlexForm                                                                      |
+| 3.1.0      | 2016-12-22 | Task       | Remove refactor ext_tables.php for T3 8.5 and newer                                                |
+| 3.0.2      | 2016-12-02 | Bugfix     | Remove version from composer.json                                                                  |
+| 3.0.1      | 2016-12-02 | Bugfix     | Hide not needed tt_content fields                                                                  |
+| 3.0.0      | 2016-11-28 | Task       | Add iframe feature                                                                                 |
+| 2.0.0      | 2016-05-23 | Initial    | Initial release of the fork of typo3-ter/fetch-url                                                 |
