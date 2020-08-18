@@ -11,9 +11,17 @@ plugin.tx_fetchurl_pi1 {
         # Add additional parameter to the url
         additionalParameter {
             static {
+#                foo = bar
+
+#                parameter1 = TEXT
+#                parameter1.value = Any value with typoscript stdwrap
             }
 
             iframe {
+#                foo = bar
+
+#                parameter2 = TEXT
+#                parameter2.value = Any value with typoscript stdwrap
             }
         }
     }
