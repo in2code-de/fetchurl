@@ -1,5 +1,6 @@
 # TYPO3 extension fetchurl
 
+
 ## Introduction
 
 Extension fetchurl for TYPO3. Basicly a fork for TYPO3 7, 8 and so on.
@@ -7,13 +8,17 @@ Extension fetchurl for TYPO3. Basicly a fork for TYPO3 7, 8 and so on.
 Fetch an url and show the content in Frontend.
 Contained image or link URIs are rewritten accordingly.
 
+
 ## What's the difference to fetch_url from TER?
 
 The editor can select if the content from another website should be grabbed as
 static content (CURL) or via iFrame.
 
+
 ## Installation
+
 * Installation is very simple - just install the extension then you can use the plugin
+
 
 ## How to overwrite HTML-Templates?
 
@@ -27,6 +32,8 @@ plugin.tx_fetchurl {
 	}
 }
 ```
+
+
 ## How to append additional parameter?
 
 It is possible to attach additional parameters to all fetchurl requests. 
@@ -34,10 +41,37 @@ This is done with the TypoScript keys "**additionalParameter.static**" and "**ad
 
 Existing parameters and the fragment are kept.
 
-**Note:**
-if a parameter is specified in the url and set in TypoScript, the value of the url is overwritten and the TypoScript value is used.
+```
+plugin.tx_fetchurl_pi1 {
+    settings {
+        additionalParameter {
+            static {
+                # a static value
+                foo = bar
+                
+                # value with TypoScript stdWrap
+                foo2 = TEXT
+                foo2.value = bar2
+            }
 
-See the example below:
+            iframe {
+                # a static value
+                foo = bar
+                
+                # value with TypoScript stdWrap
+                foo2 = TEXT
+                foo2.value = bar2
+            }
+        }
+    }
+}
+```
+
+**Note:**
+if a parameter is specified in the url and set in TypoScript, the value of the url is overwritten and the TypoScript 
+value is used.
+
+See the example below (for `parameterName=parameterValue`):
 
 | flexform url                                      | final url                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------- |
@@ -46,22 +80,6 @@ See the example below:
 | https://example.com/?id=12#c123                   | https://example.com/?id=12&parameterName=parameterValue#c123  |
 | https://example.com/?id=12&parameterName=abc#c123 | https://example.com/?id=12&parameterName=parameterValue#c123  | 
 
-```
-plugin.tx_fetchurl_pi1 {
-    settings {
-        additionalParameter {
-            static {
-                parameterName = parameterValue
-            }
-
-            iframe {
-                parameterName = parameterValue
-            }
-        }
-    }
-}
-
-```
 
 ## Signals
 
@@ -70,6 +88,7 @@ plugin.tx_fetchurl_pi1 {
 | \In2code\Fetchurl\Domain\Service\FetchService  | afterUrlBuild | after the protocol and additional parameter are added   |
 | \In2code\Fetchurl\Domain\Service\FetchService  | getfetchedUrl | after the content fetched                               |
 | \In2code\Fetchurl\Domain\Service\IframeService | afterUrlBuild | after the protocol and additional parameter are added   |
+
 
 ## Screenshots
 
