@@ -106,6 +106,7 @@ Example for a privacy save 2-click-solution:
 
 | Version    | Date       | State      | Description                                                                                        |
 | ---------- | ---------- | ---------- | -------------------------------------------------------------------------------------------------- |
+| 4.3.0      | 2020-08-18 | Feature    | Allow typoscript stdwrap for additionalparameters                                                  |
 | 4.2.0      | 2020-08-13 | Feature    | Add typoscript option to add additional parameter to the flexform url, add "afterUrlBuild" signals |
 | 4.1.1      | 2020-08-13 | Bugfix     | Replace signalSlogDispatcher phpDoc injection with method injection                                |
 | 4.1.0      | 2020-04-24 | Feature    | Declare extension compatible with TYPO3 V10                                                        |
