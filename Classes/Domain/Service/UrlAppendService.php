@@ -40,13 +40,18 @@ class UrlAppendService
             }
 
             foreach ($additionalParameter as $name => $value) {
-                $params[$name] = $value;
+                if (!empty($value)) {
+                    $params[$name] = $value;
+                }
             }
 
             $urlParts['query'] = http_build_query($params);
 
-            $url = $urlParts['scheme'] . '://' . $urlParts['host'] . $urlParts['path']
-                . '?' . $urlParts['query'];
+            $url = $urlParts['scheme'] . '://' . $urlParts['host'] . $urlParts['path'];
+
+            if (!empty($urlParts['query'])) {
+                $url .= '?' . $urlParts['query'];
+            }
 
             if (!empty($urlParts['fragment'])) {
                 $url .= '#' . $urlParts['fragment'];
