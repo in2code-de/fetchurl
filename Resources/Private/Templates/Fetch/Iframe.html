@@ -15,13 +15,13 @@
 
 				<f:format.raw>
 					<f:translate key="iframeswitch.privacy.text" arguments="{0:domain, 1:privacyPage}">
-						Um diesen Inhalt (Quelle: <span data-iframeswitch-uri="true">www.xyz.de</span>) anzuzeigen, klicken Sie bitte
+						Um diesen Inhalt (Quelle: <span data-iframeswitch-src="true">www.xyz.de</span>) anzuzeigen, klicken Sie bitte
 						auf Akzeptieren. Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte übermittelt oder
 						Cookies gespeichert werden könnten. Weitere Informationen finden Sie auf unserer <f:link.page pageUid="{settings.pidPrivacy}">Datenschutzerklärung</f:link.page>.
 					</f:translate>
 				</f:format.raw>
 
-				<button class="iframeswitch-submit" style="display: block; width: auto; margin-top: 20px;"><f:translate key="iframeswitch.privacy.accept">Accept</f:translate></button>
+				<button class="iframeswitch-submit" data-iframeswitch-submit="true"  style="display: block; width: auto; margin-top: 20px;"><f:translate key="iframeswitch.privacy.accept">Accept</f:translate></button>
 			</div>
 		</f:then>
 		<f:else>
