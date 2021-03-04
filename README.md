@@ -1,28 +1,39 @@
-# TYPO3 extension fetchurl
+# TYPO3 Extension fetchurl
 
+## Purpose
 
-## Introduction
+The task of this extension is to fetch an URL from the internet and display it on a website.
 
-Extension fetchurl for TYPO3. Basicly a fork for TYPO3 7, 8 and so on.
+## Features
 
-Fetch an url and show the content in Frontend.
-Contained image or link URIs are rewritten accordingly.
-
-
-## What's the difference to fetch_url from TER?
-
-The editor can select if the content from another website should be grabbed as
-static content (CURL) or via iFrame.
-
+* The fetched URLs can be display inline or as an iframe.
+* If the URLs is displayed in an iframe, it is possible to activate an "IFrame-Switch" to ensure privacy
 
 ## Installation
 
-* Installation is very simple - just install the extension then you can use the plugin
+### via composer
+
+`composer require in2code/fetchurl`
+
+### via the TYPO3 Extension Manager
+
+* go to the TYPO3 Module "Admin Tools" => "Extensions"
+* search for "fetchurl"
+* import and activate the extension
+
+or
+
+* download the extension from https://extensions.typo3.org/extension/fetchurl
+* go to the TYPO3 Module "Admin Tools" => "Extensions"
+* upload the extension (if it's already installed, set the checkmark for "overwrite")
+* activate the extension
 
 
-## How to overwrite HTML-Templates?
+## Configuration
 
-Just copy the folder Fetch in EXT:fetchurl/Resources/Private/Templates/ to any location and set the new path via
+### Templating
+
+Copy the folder contents from EXT:fetchurl/Resources/Private/Templates/ to any location and set the new path via
 TypoScript setup:
 
 ```
@@ -33,13 +44,27 @@ plugin.tx_fetchurl {
 }
 ```
 
+### Activate Features
 
-## How to append additional parameter?
+Activate the iframe switch and link to your privacy page
 
-It is possible to attach additional parameters to all fetchurl requests. 
-This is done with the TypoScript keys "**additionalParameter.static**" and "**additionalParameter.iframe**". 
+```
+plugin.tx_fetchurl_pi1 {
+    settings {
+        useIframeSwitch = 1 // <- default is "1"
+        pidPrivacy = 8945 // replace with your own pid
+    }
+}
 
-Existing parameters and the fragment are kept.
+```
+
+
+### Append additional parameters
+
+It is possible to attach additional parameters to all requests of EXT:fetchurl.\
+This is done with the TypoScript keys "**additionalParameter.static**" and "**additionalParameter.iframe**".
+
+Existing parameters and the original fragment are kept.
 
 ```
 plugin.tx_fetchurl_pi1 {
@@ -48,7 +73,6 @@ plugin.tx_fetchurl_pi1 {
             static {
                 # a static value
                 foo = bar
-                
                 # value with TypoScript stdWrap
                 foo2 = TEXT
                 foo2.value = bar2
@@ -57,7 +81,6 @@ plugin.tx_fetchurl_pi1 {
             iframe {
                 # a static value
                 foo = bar
-                
                 # value with TypoScript stdWrap
                 foo2 = TEXT
                 foo2.value = bar2
@@ -68,8 +91,8 @@ plugin.tx_fetchurl_pi1 {
 ```
 
 **Note:**
-if a parameter is specified in the url and set in TypoScript, the value of the url is overwritten and the TypoScript 
-value is used.
+If a parameter is specified in the url and also set by TypoScript, the value in the original url is overwritten and the
+value from TypoScript is used.
 
 See the example below (for `parameterName=parameterValue`):
 
@@ -78,7 +101,7 @@ See the example below (for `parameterName=parameterValue`):
 | https://example.com/                              | https://example.com/?parameterName=parameterValue             |
 | https://example.com/#c123                         | https://example.com/?parameterName=parameterValue#c123        |
 | https://example.com/?id=12#c123                   | https://example.com/?id=12&parameterName=parameterValue#c123  |
-| https://example.com/?id=12&parameterName=abc#c123 | https://example.com/?id=12&parameterName=parameterValue#c123  | 
+| https://example.com/?id=12&parameterName=abc#c123 | https://example.com/?id=12&parameterName=parameterValue#c123  |
 
 
 ## Signals
@@ -106,6 +129,8 @@ Example for a privacy save 2-click-solution:
 
 | Version    | Date       | State      | Description                                                                                        |
 | ---------- | ---------- | ---------- | -------------------------------------------------------------------------------------------------- |
+| 4.4.2      | 2021-03-04 | Task       | First TER release by @in2code-de                                                                   |
+| 4.4.1      | 2021-02-22 | Bugfix     | Allow urls starting with "//"                                                                      |
 | 4.4.0      | 2020-08-19 | Task       | Don't add empty values to additionalparameters                                                     |
 | 4.3.0      | 2020-08-18 | Feature    | Allow typoscript stdwrap for additionalparameters                                                  |
 | 4.2.0      | 2020-08-13 | Feature    | Add typoscript option to add additional parameter to the flexform url, add "afterUrlBuild" signals |
