@@ -69,7 +69,13 @@ class FetchService
      */
     protected function prependProtocol($string)
     {
-        if (preg_match('~^https?://~', $string) === 0) {
+
+        // add protocol, if used url starts with "//"
+        if (preg_match('~^//.*~', $string) === 1) {
+            $string = 'https:' . $string;
+        }
+        // add protocol, if no protocol is given
+        if (preg_match('~^https?://~', $string) === 0 ) {
             $string = 'https://' . $string;
         }
         return $string;
