@@ -1,5 +1,6 @@
 {
   "name": "in2code/fetchurl",
+  "type": "typo3-cms-extension",
   "description": "Fetch an url and show the content in a TYPO3 Frontend.",
   "keywords": ["typo3", "fetch", "iframe"],
   "homepage": "https://github.com/in2code-de/fetchurl",
@@ -9,7 +10,6 @@
       "email": "alexander.kellner@in2code.de"
     }
   ],
-  "type": "typo3-cms-extension",
   "license": "GPL-3.0",
   "require": {
     "typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10.4 || ^11.0"
