@@ -2,7 +2,7 @@
   "name": "in2code/fetchurl",
   "description": "Fetch an url and show the content in a TYPO3 Frontend.",
   "keywords": ["typo3", "fetch", "iframe"],
-  "homepage": "https://github.com/einpraegsam/fetchurl",
+  "homepage": "https://github.com/in2code-de/fetchurl",
   "authors": [
     {
       "name": "Alex Kellner",
