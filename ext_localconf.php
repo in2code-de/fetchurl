@@ -4,16 +4,27 @@ if (!defined('TYPO3_MODE')) {
 }
 
 call_user_func(function () {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'In2code.fetchurl',
-        'Pi1',
-        [
-            'Fetch' => 'fetch,iframe'
-        ],
-        [
-            'Fetch' => ''
-        ]
-    );
+    $typo3Branch = class_exists(\TYPO3\CMS\Core\Information\Typo3Version::class)
+        ? (new \TYPO3\CMS\Core\Information\Typo3Version())->getBranch()
+        : TYPO3_branch;
+
+    if (version_compare($typo3Branch, '11.0', '<')) {
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'In2code.fetchurl',
+            'Pi1',
+            [
+                'Fetch' => 'fetch,iframe'
+            ]
+        );
+    } else {
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'fetchurl',
+            'Pi1',
+            [
+                \In2code\Fetchurl\Controller\FetchController::class => 'fetch,iframe'
+            ]
+        );
+    }
 
     /**
      * Register icons
