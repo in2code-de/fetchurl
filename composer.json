@@ -4,10 +4,17 @@
   "description": "Fetch an url and show the content in a TYPO3 Frontend.",
   "keywords": ["typo3", "fetch", "iframe"],
   "homepage": "https://github.com/in2code-de/fetchurl",
+  "support": {
+    "issues": "https://github.com/in2code-de/fetchurl/issues"
+  },
   "authors": [
     {
       "name": "Alex Kellner",
       "email": "alexander.kellner@in2code.de"
+    },
+    {
+      "name": "Marcus Schwemer",
+      "email": "marcus.schwemer@in2code.de"
     }
   ],
   "license": "GPL-3.0",
@@ -20,6 +27,23 @@
   "autoload": {
     "psr-4": {
       "In2code\\Fetchurl\\": "Classes"
+    }
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/fetchurl ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/fetchurl"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web",
+      "extension-key": "fetchurl"
     }
   }
 }
