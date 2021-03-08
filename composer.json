@@ -15,7 +15,7 @@
     "typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10.4 || ^11.0"
   },
   "replace": {
-    "fetchurl": "self.version"
+    "typo3-ter/fetchurl": "self.version"
   },
   "autoload": {
     "psr-4": {
