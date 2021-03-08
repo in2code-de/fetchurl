@@ -45,5 +45,8 @@
       "web-dir": ".Build/Web",
       "extension-key": "fetchurl"
     }
+  },
+  "require-dev": {
+    "typo3/tailor": "^1.3"
   }
 }
