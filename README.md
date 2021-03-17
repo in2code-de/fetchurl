@@ -129,8 +129,9 @@ Example for a privacy save 2-click-solution:
 
 | Version    | Date       | State      | Description                                                                                        |
 | ---------- | ---------- | ---------- | -------------------------------------------------------------------------------------------------- |
-| 4.5.1      | 2021-03-21 | Bugfix     | Adjust composer.json                                                                               |
-| 4.5.0      | 2021-03-21 | Feature    | Support TYPO3 11                                                                                   |
+| 4.5.2      | 2021-03-17 | Bugfix     | Add extension key to composer.json, small development updates                                      |
+| 4.5.1      | 2021-03-05 | Bugfix     | Adjust composer.json                                                                               |
+| 4.5.0      | 2021-03-05 | Feature    | Support TYPO3 11                                                                                   |
 | 4.4.2      | 2021-03-04 | Task       | First TER release by @in2code-de                                                                   |
 | 4.4.1      | 2021-02-22 | Bugfix     | Allow urls starting with "//"                                                                      |
 | 4.4.0      | 2020-08-19 | Task       | Don't add empty values to additionalparameters                                                     |
