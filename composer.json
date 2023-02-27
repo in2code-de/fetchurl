@@ -19,7 +19,7 @@
   ],
   "license": "GPL-3.0",
   "require": {
-    "typo3/cms-core": "^7.6 || ^8.7 || ^9.5 || ^10.4 || ^11.0"
+    "typo3/cms-core": "^11.0 || ^12.0 || ^12.3.x-dev"
   },
   "replace": {
     "typo3-ter/fetchurl": "self.version"

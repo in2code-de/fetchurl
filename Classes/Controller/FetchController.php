@@ -3,6 +3,8 @@ namespace In2code\Fetchurl\Controller;
 
 use In2code\Fetchurl\Domain\Service\FetchService;
 use In2code\Fetchurl\Domain\Service\IframeService;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
@@ -44,19 +46,21 @@ class FetchController extends ActionController
     /**
      * @return void
      */
-    public function fetchAction()
+    public function fetchAction(): ResponseInterface
     {
-        $this->view->assign('html', $this->objectManager->get(FetchService::class, $this->settings));
+        $this->view->assign('html', GeneralUtility::makeInstance(FetchService::class, $this->settings));
         $this->assignForAllActions();
+        return $this->htmlResponse();
     }
 
     /**
      * @return void
      */
-    public function iframeAction()
+    public function iframeAction(): ResponseInterface
     {
-        $this->view->assign('iframe', $this->objectManager->get(IframeService::class, $this->settings));
+        $this->view->assign('iframe', GeneralUtility::makeInstance(IframeService::class, $this->settings));
         $this->assignForAllActions();
+        return $this->htmlResponse();
     }
 
     /**
