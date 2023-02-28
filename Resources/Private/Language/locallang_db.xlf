@@ -30,8 +30,20 @@
 			<trans-unit id="fetchurl_title">
 				<source>Fetch remote content</source>
 			</trans-unit>
+			<trans-unit id="fetchurl_title_iframe">
+				<source>Fetch remote content [IFrame]</source>
+			</trans-unit>
+			<trans-unit id="fetchurl_title_static">
+				<source>Fetch remote content [Static]</source>
+			</trans-unit>
 			<trans-unit id="fetchurl_wizard_description">
 				<source>Fetch external content (videos, audio, or other contents), directly or using an iframe.</source>
+			</trans-unit>
+			<trans-unit id="fetchurl_wizard_description_static">
+				<source>Fetch external content (videos, audio, or other contents) and display them directly.</source>
+			</trans-unit>
+			<trans-unit id="fetchurl_wizard_description_iframe">
+				<source>Fetch external content (videos, audio, or other contents) and display them using an iframe.</source>
 			</trans-unit>
 		</body>
 	</file>

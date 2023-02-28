@@ -4,13 +4,19 @@ if (!defined('TYPO3')) {
 }
 
 call_user_func(function () {
-    $typo3Branch = (new \TYPO3\CMS\Core\Information\Typo3Version())->getBranch();
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'fetchurl',
         'Pi1',
         [
-            \In2code\Fetchurl\Controller\FetchController::class => 'fetch,iframe'
+            \In2code\Fetchurl\Controller\FetchController::class => 'fetch'
+        ]
+    );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'fetchurl',
+        'Pi2',
+        [
+            \In2code\Fetchurl\Controller\FetchController::class => 'iframe'
         ]
     );
 

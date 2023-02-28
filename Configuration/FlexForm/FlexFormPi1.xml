@@ -10,28 +10,6 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
-					<switchableControllerActions>
-						<TCEforms>
-							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.view</label>
-							<onChange>reload</onChange>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<items type="array">
-									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.view.0</numIndex>
-										<numIndex index="1">Fetch->fetch;</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.view.1</numIndex>
-										<numIndex index="1">Fetch->iframe;</numIndex>
-									</numIndex>
-								</items>
-								<maxitems>1</maxitems>
-								<size>1</size>
-							</config>
-						</TCEforms>
-					</switchableControllerActions>
 					<settings.main.url>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -42,55 +20,6 @@
 							</config>
 						</TCEforms>
 					</settings.main.url>
-					<settings.main.width>
-						<TCEforms>
-							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>
-							<exclude>1</exclude>
-							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.width</label>
-							<config>
-								<type>input</type>
-								<eval>trim</eval>
-								<default>100%</default>
-							</config>
-						</TCEforms>
-					</settings.main.width>
-					<settings.main.height>
-						<TCEforms>
-							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>
-							<exclude>1</exclude>
-							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.height</label>
-							<config>
-								<type>input</type>
-								<eval>trim, int</eval>
-								<default>800</default>
-							</config>
-						</TCEforms>
-					</settings.main.height>
-					<settings.main.scrolling>
-						<TCEforms>
-							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Fetch->iframe;]]></displayCond>
-							<exclude>1</exclude>
-							<label>LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:flexform.main.scrolling</label>
-							<config>
-								<type>radio</type>
-								<default>auto</default>
-								<items type="array">
-									<numIndex index="1" type="array">
-										<numIndex index="0">Automatic</numIndex>
-										<numIndex index="1">auto</numIndex>
-									</numIndex>
-									<numIndex index="2" type="array">
-										<numIndex index="0">Yes</numIndex>
-										<numIndex index="1">yes</numIndex>
-									</numIndex>
-									<numIndex index="3" type="array">
-										<numIndex index="0">No</numIndex>
-										<numIndex index="1">no</numIndex>
-									</numIndex>
-								</items>
-							</config>
-						</TCEforms>
-					</settings.main.scrolling>
 				</el>
 			</ROOT>
 		</main>

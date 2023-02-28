@@ -26,3 +26,5 @@ plugin.tx_fetchurl_pi1 {
         }
     }
 }
+
+plugin.tx_fetchurl_pi2 < plugin.tx_fetchurl_pi1
