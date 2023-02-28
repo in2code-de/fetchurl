@@ -32,20 +32,10 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-/**
- * Class FetchController
- */
 class FetchController extends ActionController
 {
+    protected ContentObjectRenderer $contentObject;
 
-    /**
-     * @var ContentObjectRenderer
-     */
-    protected $contentObject;
-
-    /**
-     * @return void
-     */
     public function fetchAction(): ResponseInterface
     {
         $this->view->assign('html', GeneralUtility::makeInstance(FetchService::class, $this->settings));
@@ -53,9 +43,6 @@ class FetchController extends ActionController
         return $this->htmlResponse();
     }
 
-    /**
-     * @return void
-     */
     public function iframeAction(): ResponseInterface
     {
         $this->view->assign('iframe', GeneralUtility::makeInstance(IframeService::class, $this->settings));
@@ -63,18 +50,12 @@ class FetchController extends ActionController
         return $this->htmlResponse();
     }
 
-    /**
-     * @return void
-     */
-    protected function assignForAllActions()
+    protected function assignForAllActions(): void
     {
         $this->view->assign('data', $this->contentObject->data);
     }
 
-    /**
-     * @return void
-     */
-    protected function initializeAction()
+    protected function initializeAction(): void
     {
         $this->contentObject = $this->configurationManager->getContentObject();
     }

@@ -1,35 +1,28 @@
 <?php
 
+declare(strict_types=1);
+
 namespace In2code\Fetchurl\Domain\Service;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
-/**
- * Class UrlAppendService
- */
 class UrlAppendService
 {
-
     /**
-     * @param string $url
      * @param string $mode "static" or "iframe"
-     * @return string
+     * @throws InvalidConfigurationTypeException
      */
-    public function getUrl($url, $mode)
+    public function getUrl(string $url, string $mode): string
     {
         $parameters = $this->getParameters($mode);
         return $this->appendAdditionalParameterToUrl($url, $parameters);
     }
 
-    /**
-     * @param string $url
-     * @param array $additionalParameter
-     * @return string
-     */
-    public function appendAdditionalParameterToUrl($url, $additionalParameter = [])
+    public function appendAdditionalParameterToUrl(string $url, array $additionalParameter = []): string
     {
         if ($additionalParameter !== []) {
             $urlParts = parse_url($url);
@@ -61,10 +54,9 @@ class UrlAppendService
     }
 
     /**
-     * @param string $mode "static" or "iframe"
-     * @return array
+     * @throws InvalidConfigurationTypeException
      */
-    protected function getParameters($mode)
+    protected function getParameters(string $mode): array
     {
         $configuration = $this->getConfigurationForMode($mode);
         $parameters = [];
@@ -81,12 +73,7 @@ class UrlAppendService
         return $parameters;
     }
 
-    /**
-     * @param $configuration
-     * @param $key
-     * @return string
-     */
-    protected function getStdWrapValue($configuration, $key)
+    protected function getStdWrapValue(array $configuration, string $key): string
     {
         /** @var ContentObjectRenderer $contentObject */
         $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
@@ -94,10 +81,9 @@ class UrlAppendService
     }
 
     /**
-     * @param $mode
-     * @return array
+     * @throws InvalidConfigurationTypeException
      */
-    protected function getConfigurationForMode($mode): array
+    protected function getConfigurationForMode(string $mode): array
     {
         $configurationManager = GeneralUtility::makeInstance(ConfigurationManager::class);
         $configuration = $configurationManager->getConfiguration(
