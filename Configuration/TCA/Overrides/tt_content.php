@@ -21,21 +21,37 @@ if (!defined('TYPO3')) {
 /**
  * Include Flexform
  */
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['fetchurl_pi1'] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-    'fetchurl_pi1',
-    'FILE:EXT:fetchurl/Configuration/FlexForm/FlexFormPi1.xml'
+    '*',
+    'FILE:EXT:fetchurl/Configuration/FlexForm/FlexFormPi1.xml',
+    'fetchurl_pi1'
 );
-
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['fetchurl_pi2'] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
-    'fetchurl_pi2',
-    'FILE:EXT:fetchurl/Configuration/FlexForm/FlexFormPi2.xml'
+    '*',
+    'FILE:EXT:fetchurl/Configuration/FlexForm/FlexFormPi2.xml',
+    'fetchurl_pi2'
 );
+    foreach (['fetchurl_pi1', 'fetchurl_pi2'] as $CType) {
+        $GLOBALS['TCA']['tt_content']['types'][$CType]['showitem'] = '
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+            --palette--;;general,
+            --palette--;;headers,
+        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.plugin,
+            pi_flexform,
+        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+            --palette--;;frames,
+            --palette--;;appearanceLinks,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+            --palette--;;language,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+            --palette--;;hidden,
+            --palette--;;access,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+            categories,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+            rowDescription,
+        --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+    ';
+    }
 
-/**
- * Disable non needed fields in tt_content
- */
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['fetchurl_pi1'] = 'select_key,pages,recursive';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['fetchurl_pi2'] = 'select_key,pages,recursive';
 

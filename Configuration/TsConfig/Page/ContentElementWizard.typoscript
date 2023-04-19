@@ -1,12 +1,11 @@
-mod.wizards.newContentElement.wizardItems.plugins {
+mod.wizards.newContentElement.wizardItems.special {
     elements {
         fetchurl_static {
             iconIdentifier = extensions-fetchurl-wizard
             title = LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title_static
             description = LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_wizard_description_static
             tt_content_defValues {
-                CType = list
-                list_type = fetchurl_pi1
+                CType = fetchurl_pi1
             }
         }
         fetchurl_iframe {
@@ -14,9 +13,9 @@ mod.wizards.newContentElement.wizardItems.plugins {
             title = LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_title_iframe
             description = LLL:EXT:fetchurl/Resources/Private/Language/locallang_db.xlf:fetchurl_wizard_description_iframe
             tt_content_defValues {
-                CType = list
-                list_type = fetchurl_pi2
+                CType = fetchurl_pi2
             }
         }
     }
+    show = *
 }

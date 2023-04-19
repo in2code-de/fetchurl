@@ -10,14 +10,18 @@ call_user_func(function () {
         'Pi1',
         [
             \In2code\Fetchurl\Controller\FetchController::class => 'fetch'
-        ]
+        ],
+        [],
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'fetchurl',
         'Pi2',
         [
             \In2code\Fetchurl\Controller\FetchController::class => 'iframe'
-        ]
+        ],
+        [],
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
     /**
