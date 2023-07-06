@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace In2code\Fetchurl\Domain\Service;
 
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -91,6 +92,14 @@ class UrlAppendService
             'Fetchurl',
             'Pi1'
         );
+
+        if (!ArrayUtility::isValidPath(
+            $configuration,
+            'plugin./tx_fetchurl_pi1./settings./additionalParameter./' . $mode . '.')
+        ) {
+            return [];
+        }
+
         return (array)$configuration['plugin.']['tx_fetchurl_pi1.']['settings.']['additionalParameter.'][$mode . '.'];
     }
 }
