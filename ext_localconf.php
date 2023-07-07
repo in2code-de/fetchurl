@@ -30,4 +30,9 @@ call_user_func(function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         '@import "EXT:fetchurl/Configuration/TsConfig/Page/ContentElementWizard.typoscript"'
     );
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPluginUpdater']
+        = \In2code\Fetchurl\Update\FetchurlPluginUpdater::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPermissionUpdater']
+        = \In2code\Fetchurl\Update\FetchurlPermissionUpdater::class;
 });
