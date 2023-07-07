@@ -98,7 +98,7 @@ class FetchurlPluginUpdater implements UpgradeWizardInterface
             $flexFormData = GeneralUtility::xml2array($record['pi_flexform']);
             $flexForm = $this->flexFormService->convertFlexFormContentToArray($record['pi_flexform']);
 
-            if ($flexForm['switchableControllerActions'] === null) {
+            if ($flexForm['switchableControllerActions'] !== null) {
                 $targetCType = $this->getTargetListType($flexForm['switchableControllerActions']);
                 $allowedSettings = $this->getAllowedSettingsFromFlexForm($targetCType);
                 foreach ($flexFormData['data'] as $sheetKey => $sheetData) {
