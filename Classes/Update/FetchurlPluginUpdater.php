@@ -48,7 +48,7 @@ class FetchurlPluginUpdater implements UpgradeWizardInterface
      */
     public function getTitle(): string
     {
-        return 'EXT:FetchUrl: Migrate list types and switchable controller actions to CTypes';
+        return 'EXT:fetchurl: Migrate list types and switchable controller actions to CTypes';
     }
 
     /**
@@ -61,7 +61,7 @@ class FetchurlPluginUpdater implements UpgradeWizardInterface
         $description = 'The old plugin using switchableControllerActions has been split into separate plugins. ';
         $description .= 'This update wizard migrates all existing plugin settings and changes the plugin';
         $description .= 'to use the new plugins available.';
-        $description .= 'Count of plugins "Fetchurl": ' . count($this->getMigrationRecords('fetchurl_pi1'));
+        $description .= ' Count of plugins "Fetchurl": ' . count($this->getMigrationRecords('fetchurl_pi1'));
         return $description;
     }
 
