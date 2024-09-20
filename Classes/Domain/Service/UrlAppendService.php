@@ -41,7 +41,13 @@ class UrlAppendService
 
             $urlParts['query'] = http_build_query($params);
 
-            $url = $urlParts['scheme'] . '://' . $urlParts['host'] . $urlParts['path'];
+            $url = $urlParts['scheme'] . '://' . $urlParts['host'];
+
+            if (isset($urlParts['port'])) {
+                $url .= ':' . $urlParts['port'];
+            }
+            
+            $url .= $urlParts['path'];
 
             if (!empty($urlParts['query'])) {
                 $url .= '?' . $urlParts['query'];
