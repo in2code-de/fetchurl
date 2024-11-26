@@ -129,6 +129,7 @@ Example for a privacy save 2-click-solution:
 
 | Version | Date       | State   | Description                                                                                                           |
 |---------|------------|---------|-----------------------------------------------------------------------------------------------------------------------|
+| 5.0.3   | 2023-11-26 | Bugfix  | Tiny bugfix                                                                                                           |
 | 5.0.2   | 2023-11-25 | Bugfix  | Fix GH action for TER release                                                                                         |
 | 5.0.1   | 2023-11-25 | Bugfix  | two tiny bugfixes                                                                                                     |
 | 5.0.0   | 2023-07-07 | Feature | TYPO3 V12 compatibility, switchable controller actions to CTypes, upgrade wizards added, replaced signals with events |
