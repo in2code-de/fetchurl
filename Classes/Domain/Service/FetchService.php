@@ -37,7 +37,11 @@ class FetchService
 
     protected function getContentFromUrl(): string
     {
-        return GeneralUtility::getUrl($this->getUrl());
+        $contentFromUrl = GeneralUtility::getUrl($this->getUrl());
+        if ($contentFromUrl !== false) {
+            return $contentFromUrl;
+        }
+        return '';
     }
 
     /**
