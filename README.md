@@ -96,21 +96,21 @@ value from TypoScript is used.
 
 See the example below (for `parameterName=parameterValue`):
 
-| flexform url                                      | final url                                                     |
-| ------------------------------------------------- | ------------------------------------------------------------- |
-| https://example.com/                              | https://example.com/?parameterName=parameterValue             |
-| https://example.com/#c123                         | https://example.com/?parameterName=parameterValue#c123        |
-| https://example.com/?id=12#c123                   | https://example.com/?id=12&parameterName=parameterValue#c123  |
-| https://example.com/?id=12&parameterName=abc#c123 | https://example.com/?id=12&parameterName=parameterValue#c123  |
+| flexform url                                      | final url                                                    |
+|---------------------------------------------------|--------------------------------------------------------------|
+| https://example.com/                              | https://example.com/?parameterName=parameterValue            |
+| https://example.com/#c123                         | https://example.com/?parameterName=parameterValue#c123       |
+| https://example.com/?id=12#c123                   | https://example.com/?id=12&parameterName=parameterValue#c123 |
+| https://example.com/?id=12&parameterName=abc#c123 | https://example.com/?id=12&parameterName=parameterValue#c123 |
 
 
 ## Events
 
-| Signal class name                              | Event name          | information                                             |
-| ---------------------------------------------- |---------------------| ------------------------------------------------------- |
-| \In2code\Fetchurl\Domain\Service\FetchService  | AfterUrlBuildEvent  | after the protocol and additional parameter are added   |
-| \In2code\Fetchurl\Domain\Service\FetchService  | AfterHtmlFetchEvent | after the content fetched                               |
-| \In2code\Fetchurl\Domain\Service\IframeService | AfterUrlBuildEvent  | after the protocol and additional parameter are added   |
+| Signal class name                              | Event name          | information                                           |
+|------------------------------------------------|---------------------|-------------------------------------------------------|
+| \In2code\Fetchurl\Domain\Service\FetchService  | AfterUrlBuildEvent  | after the protocol and additional parameter are added |
+| \In2code\Fetchurl\Domain\Service\FetchService  | AfterHtmlFetchEvent | after the content fetched                             |
+| \In2code\Fetchurl\Domain\Service\IframeService | AfterUrlBuildEvent  | after the protocol and additional parameter are added |
 
 
 ## Screenshots
@@ -129,6 +129,7 @@ Example for a privacy save 2-click-solution:
 
 | Version | Date       | State   | Description                                                                                                           |
 |---------|------------|---------|-----------------------------------------------------------------------------------------------------------------------|
+| 6.0.0   | 2025-02-17 | Feature | Support TYPO3 13 / 12 and drop 11 support                                                                             |
 | 5.0.3   | 2023-11-26 | Bugfix  | Tiny bugfix                                                                                                           |
 | 5.0.2   | 2023-11-25 | Bugfix  | Fix GH action for TER release                                                                                         |
 | 5.0.1   | 2023-11-25 | Bugfix  | two tiny bugfixes                                                                                                     |
