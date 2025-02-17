@@ -1,7 +1,8 @@
 <?php
-if (!defined('TYPO3')) {
-    die ('Access denied.');
-}
+
+declare(strict_types=1);
+
+defined('TYPO3') || die();
 
 /**
 * Add TypoScript

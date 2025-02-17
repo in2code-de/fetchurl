@@ -1,38 +1,37 @@
 <?php
-if (!defined('TYPO3')) {
-    die ('Access denied.');
-}
 
-call_user_func(function () {
+declare(strict_types=1);
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'fetchurl',
-        'Pi1',
-        [
-            \In2code\Fetchurl\Controller\FetchController::class => 'fetch'
-        ],
-        [],
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
-    );
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'fetchurl',
-        'Pi2',
-        [
-            \In2code\Fetchurl\Controller\FetchController::class => 'iframe'
-        ],
-        [],
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
-    );
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-    /**
-     * ContentElementWizard
-     */
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '@import "EXT:fetchurl/Configuration/TsConfig/Page/ContentElementWizard.typoscript"'
-    );
+defined('TYPO3') || die();
 
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPluginUpdater']
-        = \In2code\Fetchurl\Update\FetchurlPluginUpdater::class;
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPermissionUpdater']
-        = \In2code\Fetchurl\Update\FetchurlPermissionUpdater::class;
-});
+/**
+ * Add content elements
+ */
+ExtensionUtility::configurePlugin(
+    'fetchurl',
+    'Pi1',
+    [
+        \In2code\Fetchurl\Controller\FetchController::class => 'fetch'
+    ],
+    [],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+ExtensionUtility::configurePlugin(
+    'fetchurl',
+    'Pi2',
+    [
+        \In2code\Fetchurl\Controller\FetchController::class => 'iframe'
+    ],
+    [],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+
+/**
+ * Upgrade wizards
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPluginUpdater']
+    = \In2code\Fetchurl\Update\FetchurlPluginUpdater::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPermissionUpdater']
+    = \In2code\Fetchurl\Update\FetchurlPermissionUpdater::class;

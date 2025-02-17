@@ -1,7 +1,8 @@
 <?php
-if (!defined('TYPO3')) {
-    die ('Access denied.');
-}
+
+declare(strict_types=1);
+
+defined('TYPO3') || die();
 
 /**
  * Include Plugins
@@ -31,8 +32,8 @@ if (!defined('TYPO3')) {
     'FILE:EXT:fetchurl/Configuration/FlexForm/FlexFormPi2.xml',
     'fetchurl_pi2'
 );
-    foreach (['fetchurl_pi1', 'fetchurl_pi2'] as $CType) {
-        $GLOBALS['TCA']['tt_content']['types'][$CType]['showitem'] = '
+foreach (['fetchurl_pi1', 'fetchurl_pi2'] as $cType) {
+    $GLOBALS['TCA']['tt_content']['types'][$cType]['showitem'] = '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             --palette--;;general,
             --palette--;;headers,
@@ -52,6 +53,4 @@ if (!defined('TYPO3')) {
             rowDescription,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
     ';
-    }
-
-
+}
