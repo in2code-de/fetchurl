@@ -27,11 +27,3 @@ ExtensionUtility::configurePlugin(
     [],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
-
-/**
- * Upgrade wizards
- */
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPluginUpdater']
-    = \In2code\Fetchurl\Update\FetchurlPluginUpdater::class;
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['fetchurlPermissionUpdater']
-    = \In2code\Fetchurl\Update\FetchurlPermissionUpdater::class;
