@@ -129,6 +129,7 @@ Example for a privacy save 2-click-solution:
 
 | Version | Date       | State   | Description                                                                                                           |
 |---------|------------|---------|-----------------------------------------------------------------------------------------------------------------------|
+| 6.0.1   | 2025-07-09 | Bugfix  | Migrate update wizards to service tags                                                                                |
 | 6.0.0   | 2025-02-17 | Feature | Support TYPO3 13 / 12 and drop 11 support                                                                             |
 | 5.0.3   | 2023-11-26 | Bugfix  | Tiny bugfix                                                                                                           |
 | 5.0.2   | 2023-11-25 | Bugfix  | Fix GH action for TER release                                                                                         |
