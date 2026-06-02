@@ -28,6 +28,21 @@ or
 * upload the extension (if it's already installed, set the checkmark for "overwrite")
 * activate the extension
 
+## Contribution
+
+Contributions are always welcome.
+
+In order to ease the contributions, we provide a ddev setup.
+
+1) install ddev
+2) fork and clone project
+3) `cd my/project`
+4) `ddev start`
+5) `ddev initialize`
+6) open https://fetchurl.ddev.site/typo3/
+7) use `admin` and `password` for backend login
+
+Happy coding
 
 ## Configuration
 

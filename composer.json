@@ -1,61 +1,94 @@
 {
-	"name": "in2code/fetchurl",
-	"type": "typo3-cms-extension",
-	"description": "Fetch an url and show the content in a TYPO3 Frontend.",
-	"keywords": [
-		"typo3",
-		"fetch",
-		"iframe"
-	],
-	"homepage": "https://github.com/in2code-de/fetchurl",
-	"support": {
-		"issues": "https://github.com/in2code-de/fetchurl/issues"
-	},
-	"authors": [
-		{
-			"name": "Alex Kellner",
-			"email": "alexander.kellner@in2code.de",
-			"role": "Developer",
-			"homepage": "https://www.in2code.de"
-		},
-		{
-			"name": "Marcus Schwemer",
-			"email": "marcus.schwemer@in2code.de",
-			"role": "Developer",
-			"homepage": "https://www.in2code.de"
-		}
-	],
-	"license": "GPL-3.0",
-	"require": {
-		"php": ">=8.1.0",
-		"typo3/cms-core": "^12.4 || ^13.4"
-	},
-	"replace": {
-		"typo3-ter/fetchurl": "self.version"
-	},
-	"autoload": {
-		"psr-4": {
-			"In2code\\Fetchurl\\": "Classes"
-		}
-	},
-	"config": {
-		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin"
-	},
-	"scripts": {
-		"post-autoload-dump": [
-			"mkdir -p .Build/Web/typo3conf/ext/",
-			"[ -L .Build/Web/typo3conf/ext/fetchurl ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/fetchurl"
-		]
-	},
-	"extra": {
-		"typo3/cms": {
-			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"web-dir": ".Build/Web",
-			"extension-key": "fetchurl"
-		}
-	},
-	"require-dev": {
-		"typo3/tailor": "^1.3"
-	}
+  "name": "in2code/fetchurl",
+  "type": "typo3-cms-extension",
+  "description": "Fetch an url and show the content in a TYPO3 Frontend.",
+  "keywords": [
+    "typo3",
+    "fetch",
+    "iframe"
+  ],
+  "homepage": "https://github.com/in2code-de/fetchurl",
+  "support": {
+    "issues": "https://github.com/in2code-de/fetchurl/issues"
+  },
+  "authors": [
+    {
+      "name": "Stefan Busemann",
+      "role": "Product owner",
+      "email": "stefan.busemann@in2code.de",
+      "homepage": "https://www.in2code.de"
+    },
+    {
+      "name": "Alex Kellner",
+      "email": "alexander.kellner@in2code.de",
+      "role": "Developer",
+      "homepage": "https://www.in2code.de"
+    },
+    {
+      "name": "Marcus Schwemer",
+      "email": "marcus.schwemer@in2code.de",
+      "role": "Developer",
+      "homepage": "https://www.in2code.de"
+    }
+  ],
+  "license": "GPL-3.0",
+  "require": {
+    "php": ">=8.1.0",
+    "typo3/cms-core": "^12.4 || ^13.4",
+    "typo3/cms-extbase": "^12.4 || ^13.4",
+    "typo3/cms-frontend": "^12.4 || ^13.4"
+  },
+  "require-dev": {
+    "typo3/tailor": "^1.3",
+    "typo3/cms-install": "^12.4 || ^13.4",
+    "typo3/cms-backend": "^12.4 || ^13.4",
+    "typo3/cms-filelist": "^12.4 || ^13.4",
+    "typo3/cms-info": "^12.4 || ^13.4",
+    "typo3/cms-lowlevel": "^12.4 || ^13.4",
+    "typo3/cms-extensionmanager": "^12.4 || ^13.4",
+    "typo3/cms-fluid-styled-content": "^12.4 || ^13.4",
+    "typo3/cms-setup": "^12.4 || ^13.4",
+    "typo3/cms-belog": "^12.4 || ^13.4",
+    "typo3/cms-beuser": "^12.4 || ^13.4",
+    "helhum/typo3-console": "^9.0"
+  },
+  "replace": {
+    "typo3-ter/fetchurl": "self.version"
+  },
+  "autoload": {
+    "psr-4": {
+      "In2code\\Fetchurl\\": "Classes"
+    }
+  },
+  "config": {
+    "vendor-dir": ".build/vendor",
+    "bin-dir": ".build/bin",
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
+    }
+  },
+  "funding": [
+    {
+      "type": "other",
+      "url": "https://www.in2code.de/supportopensource"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/orgs/in2code-de/sponsoring"
+    }
+  ],
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .build/public/typo3conf/ext/",
+      "[ -L .build/public/typo3conf/ext/fetchurl ] || ln -snvf ../../../../. .build/public/typo3conf/ext/fetchurl"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "web-dir": ".build/public",
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "extension-key": "fetchurl"
+    }
+  }
 }

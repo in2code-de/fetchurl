@@ -1,0 +1,38 @@
+# .gitattributes
+.gitkeep                         export-ignore
+/.ddev                           export-ignore
+/.editorconfig                   export-ignore
+/.env                            export-ignore
+/.gitattributes                  export-ignore
+/.github                         export-ignore
+/.gitignore                      export-ignore
+/.project                        export-ignore
+/Tests                           export-ignore
+/config                          export-ignore
+/docker-compose.yml              export-ignore
+
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+* text=auto
+
+# Enforce checkout with Linux LF consistent over all platforms
+.*     text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.tmpl text eol=lf
+*.less text eol=lf
+*.js   text eol=lf
+*.json text eol=lf
+*.php  text eol=lf
+*.rst  text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.ts   text eol=lf
+*.xlf  text eol=lf
+*.scss text eol=lf
+*.sql  text eol=lf
+*.t3s  text eol=lf
+*.txt  text eol=lf
+
+.project/data/db.sql.gz filter=lfs diff=lfs merge=lfs -text
+.project/data/db-before-plugin-update.sql.gz filter=lfs diff=lfs merge=lfs -text

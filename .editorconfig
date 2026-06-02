@@ -1,3 +1,7 @@
+#
+# This file is part of in2code/cms-boilerplate
+#
+
 # top-most EditorConfig file
 root = true
 
@@ -5,35 +9,67 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
-indent_style = space
-indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-# TS/JS-Files
-[*.{ts,js}]
+# HTML-Files
+[*.html]
+indent_style = tab
+
+# PUG-Files
+[*.pug]
+indent_style = space
 indent_size = 2
+
+# TMPL-Files
+[*.tmpl]
+indent_style = tab
+
+# STYLE-Files
+[{*.css, *.scss, *.sass, *.less}]
+indent_style = space
+indent_size = 2
+
+# JS-Files
+[*.{js,ts}]
+indent_style = space
+indent_size = 4
 
 # JSON-Files
 [*.json]
-indent_style = tab
+indent_style = space
+indent_size = 2
+
+# PHP-Files
+[*.php]
+indent_style = space
+indent_size = 4
 
 # ReST-Files
 [*.rst]
+indent_style = space
 indent_size = 3
-max_line_length = 80
+
+# MD-Files
+[*.md]
+indent_style = space
+indent_size = 4
 
 # YAML-Files
-[*.{yaml,yml}]
+[{*.yaml, *.yml}]
+indent_style = space
 indent_size = 2
 
 # package.json
 # .travis.yml
-[{package.json,.travis.yml}]
+# bower.json
+[{package.json, .travis.yml, bower.json}]
+indent_style = space
 indent_size = 2
 
 # TypoScript
 [*.{typoscript,tsconfig}]
+indent_style = space
 indent_size = 2
 
 # XLF-Files
@@ -45,6 +81,7 @@ indent_style = tab
 indent_style = tab
 indent_size = 2
 
-# .htaccess
-[{_.htaccess,.htaccess}]
+# Makefile
+[{Makefile,**.mk}]
+# Use tabs for indentation (Makefiles require tabs)
 indent_style = tab

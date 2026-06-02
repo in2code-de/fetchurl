@@ -1,0 +1,13 @@
+base: 'https://fetchurl.ddev.site/'
+errorHandling: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    base: /
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: us
+    languageId: 0
+rootPageId: 1
+routes: {  }
